@@ -42,22 +42,39 @@ struct HelpView: View {
                         }
                     }
                 }
+                #if os(macOS)
+                .formStyle(.grouped)
+                #endif
             }
         }
         .navigationTitle("Help")
+        #if !os(tvOS)
         .searchable(
             text: $searchText,
-            placement: .navigationBarDrawer(displayMode: .always),
+            placement: searchFieldPlacement,
             prompt: Text("Filter Topics")
         )
+        #endif
     }
 
 
     // MARK: - Search
 
+    private var searchFieldPlacement: SearchFieldPlacement {
+        #if os(macOS)
+        return .toolbar
+        #elseif os(tvOS)
+        return .automatic
+        #elseif os(watchOS)
+        return .navigationBarDrawer
+        #else
+        return .navigationBarDrawer(displayMode: .always)
+        #endif
+    }
+
     @ViewBuilder
     private var noResultsView: some View {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *) {
             ContentUnavailableView
                 .search(text: searchText)
         } else {

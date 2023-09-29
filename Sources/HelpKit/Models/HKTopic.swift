@@ -42,7 +42,7 @@ public struct HKTopic: Identifiable {
             iconTint: .accentColor,
             content: "Some content goes here…",
             contentImage: nil,
-            links: nil,
+            links: [.init("Website", url: URL(string: "https://adamfoot.dev")!)],
             keywords: ["example"]
         )
     }()

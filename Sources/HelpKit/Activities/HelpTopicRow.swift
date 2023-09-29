@@ -17,50 +17,63 @@ struct HelpTopicRow: View {
     }
 
     var body: some View {
+        #if os(tvOS) || os(watchOS)
+        navigationView
+        #else
         switch displayMode {
         case .inline:
-            DisclosureGroup {
-                VStack(alignment: .leading, spacing: 20) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        if let image = topic.contentImage {
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 160)
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                        }
+            inlineView
+        case .navigation:
+            navigationView
+        }
+        #endif
+    }
 
-                        Text(topic.content)
-                            .font(.subheadline)
+    #if !os(tvOS) && !os(watchOS)
+    private var inlineView: some View {
+        DisclosureGroup {
+            VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 12) {
+                    if let image = topic.contentImage {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 160)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
                     }
 
-                    if let links = topic.links {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Links")
-                                .font(.subheadline.bold())
+                    Text(topic.content)
+                        .font(.subheadline)
+                }
 
-                            ForEach(links) { link in
-                                Link(link.title, destination: link.url)
-                            }
-                            .buttonStyle(.plain)
-                            .font(.subheadline)
-                            .foregroundStyle(Color.accentColor)
+                if let links = topic.links {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Links")
+                            .font(.subheadline.bold())
+
+                        ForEach(links) { link in
+                            Link(link.title, destination: link.url)
                         }
+                        .buttonStyle(.plain)
+                        .font(.subheadline)
+                        .foregroundStyle(Color.accentColor)
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-            } label: {
-                titleLabel
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
 
-        case .navigation:
-            NavigationLink {
-                HelpTopicView(topic)
-            } label: {
-                titleLabel
-                    .lineLimit(2)
-            }
+        } label: {
+            titleLabel
+        }
+    }
+    #endif
+
+    private var navigationView: some View {
+        NavigationLink {
+            HelpTopicView(topic)
+        } label: {
+            titleLabel
+                .lineLimit(titleLineLimit)
         }
     }
 
@@ -69,6 +82,7 @@ struct HelpTopicRow: View {
         if let systemImage = topic.iconSystemImage {
             Label {
                 Text(topic.title)
+                    .padding(.leading, titleLabelPadding)
             } icon: {
                 Image(systemName: systemImage)
                     .foregroundStyle(topic.iconTint)
@@ -77,6 +91,23 @@ struct HelpTopicRow: View {
         } else {
             Text(topic.title)
         }
+    }
+
+    private var titleLineLimit: Int {
+        #if os(tvOS)
+        return 1
+        #elseif os(watchOS)
+        return 3
+        #else
+        return 2
+        #endif
+    }
+    private var titleLabelPadding: CGFloat {
+        #if os(watchOS)
+        return 4
+        #else
+        return 0
+        #endif
     }
 }
 
