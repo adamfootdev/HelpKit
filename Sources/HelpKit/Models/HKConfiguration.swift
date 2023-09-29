@@ -19,10 +19,8 @@ public struct HKConfiguration {
         self.topicSections = topicSections
     }
 
-    static let example: HKConfiguration = {
-        HKConfiguration(
-            displayMode: .navigation,
-            topicSections: [.example]
-        )
-    }()
+    static let example = HKConfiguration(
+        displayMode: .navigation,
+        topicSections: [.example]
+    )
 }

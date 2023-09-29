@@ -17,7 +17,8 @@ public struct HKTopicSection: Identifiable {
         self.topics = topics
     }
 
-    static let example: HKTopicSection = {
-        HKTopicSection("Section", topics: [.example])
-    }()
+    static let example = HKTopicSection(
+        "Section",
+        topics: [.example]
+    )
 }

@@ -34,16 +34,14 @@ public struct HKTopic: Identifiable {
         self.links = links
         self.keywords = keywords
     }
-
-    static let example: HKTopic = {
-        HKTopic(
-            "Example Topic",
-            iconSystemImage: "questionmark.circle",
-            iconTint: .accentColor,
-            content: "Some content goes here…",
-            contentImage: nil,
-            links: [.init("Website", url: URL(string: "https://adamfoot.dev")!)],
-            keywords: ["example"]
-        )
-    }()
+    
+    static let example= HKTopic(
+        "Example Topic",
+        iconSystemImage: "questionmark.circle",
+        iconTint: .accentColor,
+        content: "Some content goes here…",
+        contentImage: nil,
+        links: [.init("Website", url: URL(string: "https://adamfoot.dev")!)],
+        keywords: ["example"]
+    )
 }

@@ -22,8 +22,9 @@ struct HelpTopicView: View {
         }
         #if os(macOS)
         .formStyle(.grouped)
-        #endif
+        #else
         .navigationTitle("Help")
+        #endif
         #if !os(macOS) && !os(tvOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif

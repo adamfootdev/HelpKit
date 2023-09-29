@@ -47,7 +47,9 @@ struct HelpView: View {
                 #endif
             }
         }
+        #if !os(macOS)
         .navigationTitle("Help")
+        #endif
         #if !os(tvOS)
         .searchable(
             text: $searchText,
