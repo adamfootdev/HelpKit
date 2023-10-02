@@ -22,3 +22,9 @@ public struct HKTopicSection: Identifiable {
         topics: [.example]
     )
 }
+
+extension HKTopicSection: Comparable {
+    public static func <(lhs: HKTopicSection, rhs: HKTopicSection) -> Bool {
+        (lhs.title ?? "") < (rhs.title ?? "")
+    }
+}

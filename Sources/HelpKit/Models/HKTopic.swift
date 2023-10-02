@@ -45,3 +45,9 @@ public struct HKTopic: Identifiable {
         keywords: ["example"]
     )
 }
+
+extension HKTopic: Comparable {
+    public static func <(lhs: HKTopic, rhs: HKTopic) -> Bool {
+        lhs.title < rhs.title
+    }
+}

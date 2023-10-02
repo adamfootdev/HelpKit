@@ -17,3 +17,9 @@ public struct HKLink: Identifiable {
         self.url = url
     }
 }
+
+extension HKLink: Comparable {
+    public static func <(lhs: HKLink, rhs: HKLink) -> Bool {
+        lhs.title < rhs.title
+    }
+}
