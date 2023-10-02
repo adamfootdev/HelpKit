@@ -41,6 +41,23 @@ struct HelpView: View {
                             }
                         }
                     }
+
+                    if let getSupportAction = configuration.getSupportAction {
+                        Section {
+                            #if os(macOS)
+                            LabeledContent("More Options") {
+                                Button("Get Support…") {
+                                    getSupportAction()
+                                }
+                            }
+
+                            #else
+                            Button("Get Support") {
+                                getSupportAction()
+                            }
+                            #endif
+                        }
+                    }
                 }
                 #if os(macOS)
                 .formStyle(.grouped)

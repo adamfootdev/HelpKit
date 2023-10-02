@@ -35,7 +35,7 @@ public struct HKTopic: Identifiable {
         self.keywords = keywords
     }
     
-    static let example= HKTopic(
+    static let example = HKTopic(
         "Example Topic",
         iconSystemImage: "questionmark.circle",
         iconTint: .accentColor,
