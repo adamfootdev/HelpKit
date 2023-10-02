@@ -7,10 +7,10 @@ let package = Package(
     name: "HelpKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v16),
+        .iOS(.v15),
         .macOS(.v13),
-        .tvOS(.v16),
-        .watchOS(.v9)
+        .tvOS(.v15),
+        .watchOS(.v8)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
