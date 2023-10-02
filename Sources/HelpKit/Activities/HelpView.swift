@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct HelpView: View {
+public struct HelpView: View {
     private let configuration: HKConfiguration
 
     @State private var searchText: String = ""
 
-    init(configuration: HKConfiguration) {
+    public init(configuration: HKConfiguration) {
         self.configuration = configuration
     }
 
@@ -135,7 +135,7 @@ struct HelpView: View {
 }
 
 #Preview {
-    NavigationStack {
+    NavigationView {
         HelpView(configuration: .example)
     }
 }

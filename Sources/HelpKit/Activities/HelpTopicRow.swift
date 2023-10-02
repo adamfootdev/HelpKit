@@ -112,7 +112,7 @@ struct HelpTopicRow: View {
 }
 
 #Preview {
-    NavigationStack {
+    NavigationView {
         Form {
             HelpTopicRow(.example, displayMode: .navigation)
         }

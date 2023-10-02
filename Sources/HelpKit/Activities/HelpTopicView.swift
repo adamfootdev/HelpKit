@@ -160,7 +160,7 @@ struct HelpTopicView: View {
 }
 
 #Preview {
-    NavigationStack {
+    NavigationView {
         HelpTopicView(.example)
     }
 }
