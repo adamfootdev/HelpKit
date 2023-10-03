@@ -48,7 +48,7 @@ struct HelpTopicRow: View {
 
                 if let links = topic.links {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Links")
+                        Text("links.title", bundle: .module)
                             .font(.subheadline.bold())
 
                         ForEach(links) { link in

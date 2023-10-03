@@ -1,0 +1,21 @@
+/*
+ Localizable.strings
+ AboutKit
+
+ Created by Adam Foot on 06/07/2021.
+
+ */
+
+/* General */
+
+"help.title" = "Pomoc";
+
+"filterTopics.title" = "Filtruj Tematy";
+"noResultsFound.title" = "Nie Znaleziono Wyników";
+
+"moreOptions.title" = "Więcej Możliwości";
+"getSupport.title" = "Uzyskać Wsparcie";
+"getSupport.alternate.title" = "Uzyskać Wsparcie…";
+
+"links.title" = "Spinki do Mankietów";
+"view.title" = "Pogląd…";

@@ -45,14 +45,23 @@ public struct HelpView: View {
                     if let getSupportAction = configuration.getSupportAction {
                         Section {
                             #if os(macOS)
-                            LabeledContent("More Options") {
-                                Button("Get Support…") {
+                            LabeledContent(String(
+                                localized: "moreOptions.title",
+                                bundle: .module
+                            )) {
+                                Button(String(
+                                    localized: "getSupport.alternate.title",
+                                    bundle: .module
+                                )) {
                                     getSupportAction()
                                 }
                             }
 
                             #else
-                            Button("Get Support") {
+                            Button(String(
+                                localized: "getSupport.title",
+                                bundle: .module
+                            )) {
                                 getSupportAction()
                             }
                             #endif
@@ -65,13 +74,16 @@ public struct HelpView: View {
             }
         }
         #if !os(macOS)
-        .navigationTitle("Help")
+        .navigationTitle(String(
+            localized: "help.title",
+            bundle: .module
+        ))
         #endif
         #if !os(tvOS)
         .searchable(
             text: $searchText,
             placement: searchFieldPlacement,
-            prompt: Text("Filter Topics")
+            prompt: Text("filterTopics.title", bundle: .module)
         )
         #endif
     }
@@ -97,7 +109,7 @@ public struct HelpView: View {
             ContentUnavailableView
                 .search(text: searchText)
         } else {
-            Text("No Results Found")
+            Text("noResultsFound.title", bundle: .module)
                 .font(.title2.bold())
                 .foregroundStyle(.secondary)
         }

@@ -23,7 +23,10 @@ struct HelpTopicView: View {
         #if os(macOS)
         .formStyle(.grouped)
         #else
-        .navigationTitle("Help")
+        .navigationTitle(String(
+            localized: "help.title",
+            bundle: .module
+        ))
         #endif
         #if !os(macOS) && !os(tvOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -124,7 +127,13 @@ struct HelpTopicView: View {
                 ForEach(links) { link in
                     #if os(macOS)
                     LabeledContent(link.title) {
-                        Link("View…", destination: link.url)
+                        Link(
+                            String(
+                                localized: "view.title",
+                                bundle: .module
+                            ),
+                            destination: link.url
+                        )
                     }
 
                     #elseif os(tvOS)
@@ -153,7 +162,7 @@ struct HelpTopicView: View {
                     #endif
                 }
             } header: {
-                Text("Links")
+                Text("links.title", bundle: .module)
             }
         }
     }

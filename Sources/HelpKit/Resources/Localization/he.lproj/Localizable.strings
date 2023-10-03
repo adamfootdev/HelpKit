@@ -1,0 +1,21 @@
+/*
+ Localizable.strings
+ AboutKit
+
+ Created by Adam Foot on 06/07/2021.
+
+ */
+
+/* General */
+
+"help.title" = "עֶזרָה";
+
+"filterTopics.title" = "סנן נושאים";
+"noResultsFound.title" = "לא נמצאו תוצאות";
+
+"moreOptions.title" = "אפשרויות נוספות";
+"getSupport.title" = "קבל תמיכה";
+"getSupport.alternate.title" = "קבל תמיכה…";
+
+"links.title" = "קישורים";
+"view.title" = "נוף…";

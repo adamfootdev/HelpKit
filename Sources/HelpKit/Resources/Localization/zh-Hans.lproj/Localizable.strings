@@ -1,0 +1,21 @@
+/*
+ Localizable.strings
+ AboutKit
+
+ Created by Adam Foot on 06/07/2021.
+
+ */
+
+/* General */
+
+"help.title" = "帮助";
+
+"filterTopics.title" = "过滤主题";
+"noResultsFound.title" = "未找到结果";
+
+"moreOptions.title" = "更多的选择";
+"getSupport.title" = "得到支持";
+"getSupport.alternate.title" = "得到支持…";
+
+"links.title" = "链接";
+"view.title" = "看法…";

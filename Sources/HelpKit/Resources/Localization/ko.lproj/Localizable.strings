@@ -1,0 +1,21 @@
+/*
+ Localizable.strings
+ AboutKit
+
+ Created by Adam Foot on 06/07/2021.
+
+ */
+
+/* General */
+
+"help.title" = "돕다";
+
+"filterTopics.title" = "주제 필터링";
+"noResultsFound.title" = "검색 결과가 없습니다";
+
+"moreOptions.title" = "추가 옵션";
+"getSupport.title" = "도움을 받다";
+"getSupport.alternate.title" = "도움을 받다…";
+
+"links.title" = "연결";
+"view.title" = "보다…";
