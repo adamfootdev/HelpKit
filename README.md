@@ -14,6 +14,9 @@ This has been localised into multiple languages and the buttons will automatical
     - [HKTopic](#hktopic)
     - [HKLink](#hklink)
     - [HelpView](#helpview)
+3. [Other Packages](#otherpackages)
+    - [AboutKit](https://github.com/adamfootdev/AboutKit)
+    - [FeaturesKit](https://github.com/adamfootdev/FeaturesKit)
 
 ## Requirements
 
