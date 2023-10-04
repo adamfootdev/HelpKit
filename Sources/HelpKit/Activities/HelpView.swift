@@ -73,12 +73,10 @@ public struct HelpView: View {
                 #endif
             }
         }
-        #if !os(macOS)
         .navigationTitle(String(
             localized: "help.title",
             bundle: .module
         ))
-        #endif
         #if !os(tvOS)
         .searchable(
             text: $searchText,
