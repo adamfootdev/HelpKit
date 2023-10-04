@@ -8,10 +8,15 @@
 import SwiftUI
 
 public struct HelpView: View {
+
+    /// A custom struct of type `HKConfiguration` containing details for HelpKit.
     private let configuration: HKConfiguration
 
+    /// A `String` containing the current search text for filtering topics.
     @State private var searchText: String = ""
 
+    /// Initializes a new SwiftUI `View` which displays help topics.
+    /// - Parameter configuration: A custom struct of type `HKConfiguration` containing details for HelpKit.
     public init(configuration: HKConfiguration) {
         self.configuration = configuration
     }

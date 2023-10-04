@@ -7,16 +7,49 @@
 
 import SwiftUI
 
+/// A custom struct containing details about a help topic.
 public struct HKTopic: Identifiable {
-    public let id = UUID()
-    public let title: String
-    public let iconSystemImage: String?
-    public let iconTint: Color
-    public let content: String
-    public let contentImage: Image?
-    public let links: [HKLink]?
-    public let keywords: [String]?
 
+    /// The stable identity of the topic as a `UUID`.
+    public let id = UUID()
+
+    /// A `String` containing the title of the topic.
+    public let title: String
+
+    /// An `Optional<String>` containing the name of a system image to use
+    /// as the icon in the topics list.
+    public let iconSystemImage: String?
+
+    /// The `Color` to use to tint the icon in the topics list.
+    public let iconTint: Color
+
+    /// A `String` containing details about the help topic.
+    public let content: String
+
+    /// An `Optional<Image>` to display above the content on the help topic screen.
+    public let contentImage: Image?
+
+    /// An optional array of `HKLink` that contains a list of links to display below the content
+    /// on the help topic screen.
+    public let links: [HKLink]?
+
+    /// An optional array of `String` that contains additional keywords to use when filtering help
+    /// topics that arenʼt used in the title or content.
+    public let keywords: [String]?
+    
+    /// Initializes a new `HKTopic` struct which contains details about a help topic.
+    /// - Parameters:
+    ///   - title: A `String` containing the title of the topic.
+    ///   - iconSystemImage: An `Optional<String>` containing the name of a system image to use
+    ///   as the icon in the topics list. Defaults to `nil`.
+    ///   - iconTint: The `Color` to use to tint the icon in the topics list. Defaults to `.accentColor`.
+    ///   - content: A `String` containing details about the help topic.
+    ///   - contentImage: An `Optional<Image>` to display above the content on the help topic screen.
+    ///   Defaults to `nil`.
+    ///   - links: An optional array of `HKLink` that contains a list of links to display below the content
+    ///   on the help topic screen. Defaults to `nil`.
+    ///   - keywords: An optional array of `String` that contains additional keywords to use when
+    ///   filtering help topics that arenʼt used in the title or content. Defaults to `nil`.
     public init(
         _ title: String,
         iconSystemImage: String? = nil,
@@ -35,6 +68,7 @@ public struct HKTopic: Identifiable {
         self.keywords = keywords
     }
     
+    /// An example `HKTopic` to be used in SwiftUI previews.
     static let example = HKTopic(
         "Example Topic",
         iconSystemImage: "questionmark.circle",

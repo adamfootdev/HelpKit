@@ -7,7 +7,9 @@
 
 import Foundation
 
+/// A custom enum used to indicate how HelpKit is displayed.
 public enum HKDisplayMode {
+
     /// Displays the topic below the title.
     case inline
 
