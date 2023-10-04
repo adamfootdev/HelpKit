@@ -101,3 +101,13 @@ Create an instance of the view using the following:
 ```swift
 HelpView(configuration: configuration)
 ```
+
+## Other Packages
+
+### [AboutKit](https://github.com/adamfootdev/AboutKit)
+
+Add an about screen to your app.
+
+### [FeaturesKit](https://github.com/adamfootdev/FeaturesKit)
+
+Add a features list screen to your app.
