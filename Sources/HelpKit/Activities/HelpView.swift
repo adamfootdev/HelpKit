@@ -41,7 +41,11 @@ public struct HelpView: View {
 
                             } header: {
                                 if let title = section.title {
+                                    #if os(tvOS)
+                                    SectionHeaderLabel(title)
+                                    #else
                                     Text(title)
+                                    #endif
                                 }
                             }
                         }

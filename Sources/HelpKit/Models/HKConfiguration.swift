@@ -7,6 +7,14 @@
 
 import Foundation
 
+#if os(iOS) || os(tvOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#elseif os(watchOS)
+import WatchKit
+#endif
+
 /// A custom struct containing details for HelpKit.
 public struct HKConfiguration {
 
@@ -45,5 +53,47 @@ public struct HKConfiguration {
         topicSections: [.example]
     ) {
         print("Get Support")
+    }
+}
+
+extension HKConfiguration {
+
+    /// Initializes a new `HKConfiguration` struct which contains details about
+    /// how HelpKit will be displayed and the topics to use.
+    /// - Parameters:
+    ///   - displayMode: A custom enum used to indicate how HelpKit is displayed.
+    ///   Please note `.inline` is only available on iOS & macOS. Defaults to `.navigation`.
+    ///   - topicSections: An array of `HKTopicSection` which contains all of the help
+    ///   topics grouped by section.
+    ///   - supportEmail: A `String` containing the email address to use for users to contact the app developer..
+    public init(
+        displayMode: HKDisplayMode = .navigation,
+        topicSections: [HKTopicSection],
+        supportEmail: String
+    ) {
+        self.displayMode = displayMode
+        self.topicSections = topicSections
+
+        let encodedEmail = supportEmail.addingPercentEncoding(
+            withAllowedCharacters: .alphanumerics
+        ) ?? supportEmail
+
+        if let url = URL(string: "mailto:\(encodedEmail)?subject=Support") {
+            #if os(iOS) || os(tvOS)
+            self.getSupportAction = {
+                UIApplication.shared.open(url)
+            }
+            #elseif os(macOS)
+            self.getSupportAction = {
+                NSWorkspace.shared.open(url)
+            }
+            #elseif os(watchOS)
+            self.getSupportAction = {
+                WKExtension.shared().openSystemURL(url)
+            }
+            #endif
+        } else {
+            self.getSupportAction = nil
+        }
     }
 }
