@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HelpTopicRow: View {
+    @Environment(\.openURL) private var openURL
+
     private let topic: HKTopic
     private let displayMode: HKDisplayMode
 
@@ -52,9 +54,13 @@ struct HelpTopicRow: View {
                             .font(.subheadline.bold())
 
                         ForEach(links) { link in
-                            Link(link.title, destination: link.url)
+                            Button(link.title) {
+                                openURL(link.url)
+                            }
                         }
+                        #if !os(visionOS)
                         .buttonStyle(.plain)
+                        #endif
                         .font(.subheadline)
                         .foregroundStyle(Color.accentColor)
                     }

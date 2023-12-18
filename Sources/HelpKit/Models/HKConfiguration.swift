@@ -7,7 +7,7 @@
 
 import Foundation
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 #elseif os(macOS)
 import AppKit
@@ -79,7 +79,7 @@ extension HKConfiguration {
         ) ?? supportEmail
 
         if let url = URL(string: "mailto:\(encodedEmail)?subject=Support") {
-            #if os(iOS) || os(tvOS)
+            #if os(iOS) || os(tvOS) || os(visionOS)
             self.getSupportAction = {
                 UIApplication.shared.open(url)
             }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HelpTopicView: View {
+    @Environment(\.openURL) private var openURL
+
     private let topic: HKTopic
 
     init(_ topic: HKTopic) {
@@ -90,7 +92,11 @@ struct HelpTopicView: View {
     private var contentView: some View {
         VStack(alignment: .leading, spacing: contentSpacing) {
             Text(topic.title)
+                #if os(visionOS)
+                .font(.title3)
+                #else
                 .font(.title3.bold())
+                #endif
 
             Text(topic.content)
                 .font(.subheadline)
@@ -158,7 +164,9 @@ struct HelpTopicView: View {
                     .padding(.vertical, 8)
 
                     #else
-                    Link(link.title, destination: link.url)
+                    Button(link.title) {
+                        openURL(link.url)
+                    }
                     #endif
                 }
             } header: {

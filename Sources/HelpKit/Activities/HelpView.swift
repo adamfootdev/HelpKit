@@ -112,7 +112,7 @@ public struct HelpView: View {
 
     @ViewBuilder
     private var noResultsView: some View {
-        if #available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *) {
+        if #available(iOS 17.0, macOS 14.0, tvOS 17.0, visionOS 1.0, watchOS 10.0, *) {
             ContentUnavailableView
                 .search(text: searchText)
         } else {
@@ -157,4 +157,5 @@ public struct HelpView: View {
     NavigationView {
         HelpView(configuration: .example)
     }
+    .navigationViewStyle(.stack)
 }
