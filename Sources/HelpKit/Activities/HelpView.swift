@@ -157,5 +157,7 @@ public struct HelpView: View {
     NavigationView {
         HelpView(configuration: .example)
     }
+    #if os(iOS)
     .navigationViewStyle(.stack)
+    #endif
 }
