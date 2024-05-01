@@ -8,7 +8,7 @@
 import Foundation
 
 /// A custom enum used to indicate how HelpKit is displayed.
-public enum HKDisplayMode {
+public enum HKDisplayMode: Sendable {
 
     /// Displays the topic below the title.
     case inline

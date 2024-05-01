@@ -8,7 +8,7 @@
 import Foundation
 
 /// A custom struct containing details about a help topic section.
-public struct HKTopicSection: Identifiable {
+public struct HKTopicSection: Identifiable, Sendable {
     
     /// The stable identity of the section as a `UUID`.
     public let id = UUID()

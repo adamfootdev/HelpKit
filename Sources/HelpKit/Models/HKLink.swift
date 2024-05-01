@@ -8,7 +8,7 @@
 import Foundation
 
 /// A custom struct used to contain details about a help link.
-public struct HKLink: Identifiable {
+public struct HKLink: Identifiable, Sendable {
     
     /// The stable identity of the link as a `UUID`.
     public let id = UUID()

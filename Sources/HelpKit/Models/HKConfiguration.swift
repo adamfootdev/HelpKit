@@ -16,7 +16,7 @@ import WatchKit
 #endif
 
 /// A custom struct containing details for HelpKit.
-public struct HKConfiguration {
+public struct HKConfiguration: Sendable {
 
     /// A custom enum used to indicate how HelpKit is displayed.
     /// Please note `.inline` is only available on iOS & macOS.
@@ -26,8 +26,8 @@ public struct HKConfiguration {
     public let topicSections: [HKTopicSection]
 
     /// An optional completion block to perform when the user selects the Get Support button.
-    public let getSupportAction: (() -> Void)?
-    
+    public let getSupportAction: (@Sendable () -> Void)?
+
     /// Initializes a new `HKConfiguration` struct which contains details about
     /// how HelpKit will be displayed and the topics to use.
     /// - Parameters:
@@ -40,7 +40,7 @@ public struct HKConfiguration {
     public init(
         displayMode: HKDisplayMode = .navigation,
         topicSections: [HKTopicSection],
-        getSupportAction: (() -> Void)? = nil
+        getSupportAction: (@Sendable () -> Void)? = nil
     ) {
         self.displayMode = displayMode
         self.topicSections = topicSections
@@ -80,17 +80,23 @@ extension HKConfiguration {
 
         if let url = URL(string: "mailto:\(encodedEmail)?subject=Support") {
             #if os(iOS) || os(tvOS) || os(visionOS)
-            self.getSupportAction = {
-                UIApplication.shared.open(url)
-            }
+            self.getSupportAction = .init({
+                MainActor.assumeIsolated {
+                    UIApplication.shared.open(url)
+                }
+            })
             #elseif os(macOS)
-            self.getSupportAction = {
-                NSWorkspace.shared.open(url)
-            }
+            self.getSupportAction = .init({
+                MainActor.assumeIsolated {
+                    NSWorkspace.shared.open(url)
+                }
+            })
             #elseif os(watchOS)
-            self.getSupportAction = {
-                WKExtension.shared().openSystemURL(url)
-            }
+            self.getSupportAction = .init({
+                MainActor.assumeIsolated {
+                    WKExtension.shared().openSystemURL(url)
+                }
+            })
             #endif
         } else {
             self.getSupportAction = nil

@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// A custom struct containing details about a help topic.
-public struct HKTopic: Identifiable {
+public struct HKTopic: Identifiable, Sendable {
 
     /// The stable identity of the topic as a `UUID`.
     public let id = UUID()
