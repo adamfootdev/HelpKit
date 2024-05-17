@@ -87,8 +87,10 @@ extension HKConfiguration {
             })
             #elseif os(macOS)
             self.getSupportAction = .init({
-                MainActor.assumeIsolated {
-                    NSWorkspace.shared.open(url)
+                Task {
+                    await MainActor.run {
+                        NSWorkspace.shared.open(url)
+                    }
                 }
             })
             #elseif os(watchOS)
