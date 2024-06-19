@@ -17,16 +17,22 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "HelpKit",
-            targets: ["HelpKit"]),
+            targets: ["HelpKit"]
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "HelpKit",
-            resources: [.process("Resources")]),
+            resources: [.process("Resources")],
+            swiftSettings: [
+                .swiftLanguageVersion(.v6)
+            ]
+        ),
         .testTarget(
             name: "HelpKitTests",
-            dependencies: ["HelpKit"]),
+            dependencies: ["HelpKit"]
+        ),
     ]
 )
