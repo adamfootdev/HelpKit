@@ -26,7 +26,7 @@ public struct HKConfiguration: Sendable {
     public let topicSections: [HKTopicSection]
 
     /// An optional completion block to perform when the user selects the Get Support button.
-    public let getSupportAction: (@MainActor @Sendable () -> Void)?
+    public let getSupportAction: (@Sendable () -> Void)?
 
     /// Initializes a new `HKConfiguration` struct which contains details about
     /// how HelpKit will be displayed and the topics to use.
@@ -40,7 +40,7 @@ public struct HKConfiguration: Sendable {
     public init(
         displayMode: HKDisplayMode = .navigation,
         topicSections: [HKTopicSection],
-        getSupportAction: (@MainActor @Sendable () -> Void)? = nil
+        getSupportAction: (@Sendable () -> Void)? = nil
     ) {
         self.displayMode = displayMode
         self.topicSections = topicSections
@@ -81,15 +81,21 @@ extension HKConfiguration {
         if let url = URL(string: "mailto:\(encodedEmail)?subject=Support") {
             #if os(iOS) || os(tvOS) || os(visionOS)
             self.getSupportAction = .init({
-                UIApplication.shared.open(url)
+                Task { @MainActor in
+                    UIApplication.shared.open(url)
+                }
             })
             #elseif os(macOS)
             self.getSupportAction = .init({
-                NSWorkspace.shared.open(url)
+                Task { @MainActor in
+                    NSWorkspace.shared.open(url)
+                }
             })
             #elseif os(watchOS)
             self.getSupportAction = .init({
-                WKExtension.shared().openSystemURL(url)
+                Task { @MainActor in
+                    WKExtension.shared().openSystemURL(url)
+                }
             })
             #endif
         } else {
