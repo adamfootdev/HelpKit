@@ -27,7 +27,7 @@ let package = Package(
             name: "HelpKit",
             resources: [.process("Resources")],
             swiftSettings: [
-                .swiftLanguageVersion(.v6)
+                .swiftLanguageMode(.v6)
             ]
         ),
         .testTarget(
