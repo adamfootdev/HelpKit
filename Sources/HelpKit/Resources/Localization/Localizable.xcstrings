@@ -63,6 +63,12 @@
             "value" : "סנן נושאים"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Témák szűrése"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -115,6 +121,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фильтровать темы"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrovať témy"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konuları Filtrele"
           }
         },
         "vi" : {
@@ -193,6 +211,12 @@
             "value" : "קבל תמיכה…"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Támogatás kérése…"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -245,6 +269,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Получать поддержку…"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Získajte podporu…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destek Alın…"
           }
         },
         "vi" : {
@@ -323,6 +359,12 @@
             "value" : "קבל תמיכה"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szerezzen támogatást"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -375,6 +417,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Получать поддержку"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Získajte podporu"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destek Alın"
           }
         },
         "vi" : {
@@ -454,6 +508,12 @@
             "value" : "עֶזרָה"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Súgó"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -506,6 +566,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Помощь"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomocník"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yardım"
           }
         },
         "vi" : {
@@ -584,6 +656,12 @@
             "value" : "קישורים"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linkek"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -636,6 +714,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ссылки"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odkazy"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bağlantılar"
           }
         },
         "vi" : {
@@ -714,6 +804,12 @@
             "value" : "אפשרויות נוספות"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "További lehetőségek"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -766,6 +862,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Больше вариантов"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viac možností"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha Fazla Seçenek"
           }
         },
         "vi" : {
@@ -844,6 +952,12 @@
             "value" : "לא נמצאו תוצאות"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nincs eredmény"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -896,6 +1010,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Результатов не найдено"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenašli sa žiadne výsledky"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonuç Bulunamadı"
           }
         },
         "vi" : {
@@ -974,6 +1100,12 @@
             "value" : "נוף…"
           }
         },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilátás…"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1026,6 +1158,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Вид…"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobraziť…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görüş…"
           }
         },
         "vi" : {
