@@ -21,12 +21,12 @@ This has been localised into multiple languages and the buttons will automatical
 
 ## Requirements
 
-- iOS/iPadOS 15.0+
+- iOS/iPadOS 16.0+
 - macOS 13.0+
 - tvOS 16.0+
 - visionOS 1.0+
-- watchOS 8.0+
-- Xcode 15.0+
+- watchOS 9.0+
+- Xcode 26.0+
 
 ## Integration
 
@@ -36,7 +36,7 @@ HelpKit can be added to your app via Swift Package Manager in Xcode. Add to your
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/adamfootdev/HelpKit.git", from: "1.0.0")
+    .package(url: "https://github.com/adamfootdev/HelpKit.git", from: "2.0.0")
 ]
 ```
 

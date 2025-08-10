@@ -54,10 +54,14 @@ public struct HelpView: View {
                     if let getSupportAction = configuration.getSupportAction {
                         Section {
                             #if os(macOS)
-                            LabeledContent(String(
-                                localized: "moreOptions.title",
-                                bundle: .module
-                            )) {
+                            HStack {
+                                Text(String(
+                                    localized: "moreOptions.title",
+                                    bundle: .module
+                                ))
+
+                                Spacer()
+
                                 Button(String(
                                     localized: "getSupport.alternate.title",
                                     bundle: .module
@@ -92,6 +96,13 @@ public struct HelpView: View {
             placement: searchFieldPlacement,
             prompt: Text("filterTopics.title", bundle: .module)
         )
+        .toolbar {
+            #if os(iOS)
+            if #available(iOS 26.0, *) {
+                DefaultToolbarItem(kind: .search, placement: .bottomBar)
+            }
+            #endif
+        }
         #endif
     }
 

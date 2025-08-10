@@ -132,14 +132,17 @@ struct HelpTopicView: View {
             Section {
                 ForEach(links) { link in
                     #if os(macOS)
-                    LabeledContent(link.title) {
-                        Link(
-                            String(
-                                localized: "view.title",
-                                bundle: .module
-                            ),
-                            destination: link.url
-                        )
+                    HStack {
+                        Text(link.title)
+
+                        Spacer()
+
+                        Button(String(
+                            localized: "view.title",
+                            bundle: .module
+                        )) {
+                            openURL(link.url)
+                        }
                     }
 
                     #elseif os(tvOS)
