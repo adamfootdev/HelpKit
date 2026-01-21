@@ -1,10 +1,10 @@
 # HelpKit
 
-![Platform](https://img.shields.io/badge/platforms-iOS%2FiPadOS%2015.0%2B%20%7C%20macOS%2013.0%2B%20%7C%20tvOS%2015.0%2B%20%7C%20visionOS%201.0%2B%20%7C%20watchOS%208.0%2B-blue)
+![Platform](https://img.shields.io/badge/platforms-iOS%2FiPadOS%2016.0%2B%20%7C%20macOS%2013.0%2B%20%7C%20tvOS%2016.0%2B%20%7C%20visionOS%201.0%2B%20%7C%20watchOS%209.0%2B-blue)
 
 HelpKit provides developers for Apple platforms with the ability to add a Help screen to their apps. This is built using SwiftUI so can be displayed natively from a SwiftUI app or using a UIHostingController in a UIKit app.
 
-This has been localised into multiple languages and the buttons will automatically adapt to your appʼs accent color.
+This has been localized into multiple languages and the buttons will automatically adapt to your appʼs accent color.
 
 1. [Requirements](#requirements)
 2. [Integration](#integration)
