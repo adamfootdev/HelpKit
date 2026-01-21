@@ -18,6 +18,7 @@ This has been localized into multiple languages and the buttons will automatical
     - [AboutKit](https://github.com/adamfootdev/AboutKit)
     - [FeaturesKit](https://github.com/adamfootdev/FeaturesKit)
     - [HapticsKit](https://github.com/adamfootdev/HapticsKit)
+    - [InAppPurchaseKit](https://github.com/adamfootdev/InAppPurchaseKit)
 
 ## Requirements
 
@@ -120,3 +121,7 @@ Add a features list screen to your app.
 ### [HapticsKit](https://github.com/adamfootdev/HapticsKit)
 
 Add haptic feedback to your app.
+
+### [InAppPurchaseKit](https://github.com/adamfootdev/InAppPurchaseKit)
+
+Add a subscription screen to your app.
